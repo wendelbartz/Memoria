@@ -1,9 +1,9 @@
-var cartas_viradas = 0;
+﻿var cartas_viradas = 0;
 var cartas = [];
 var viradas = [];
 var fotos = ["imagens/raiden.jpg","imagens/scorpion.jpg"
-						,"imagens/liu_kang.jpg","imagens/sub-zero.jpg"
-						,"imagens/darrius.jpg","imagens/kira.jpg"
+						,"imagens/sindel.jpg","imagens/sub-zero.jpg"
+						,"imagens/mileena.jpg","imagens/baraka.jpg"
 						,"imagens/nightwolf.jpg","imagens/shao_kahn.jpg","imagens/verso_carta.jpg"];
 var jogadas = 0;
 
@@ -121,7 +121,7 @@ function verifica(id){
 			viradas[linha][coluna] = 1;
 		}
 		if(cartas_viradas == 2)
-				setTimeout(esconde, 1000);
+			setTimeout(esconde, 1000);
 	}
 }
 
