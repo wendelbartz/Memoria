@@ -6,6 +6,7 @@ var fotos = ["imagens/raiden.jpg","imagens/scorpion.jpg"
 						,"imagens/mileena.jpg","imagens/baraka.jpg"
 						,"imagens/nightwolf.jpg","imagens/shao_kahn.jpg","imagens/verso_carta.jpg"];
 var jogadas = 0;
+var final;
 
 function finaliza(){
 	var flag = true;
@@ -25,7 +26,7 @@ function finaliza(){
 function esconde(){
 	var first_l, first_c = null;
 	var l, c;
-	var final = 0;
+	final = 0;
 	for (l = 0; l < viradas.length; l++) {
 		for (c = 0; c < 4; c++) {
 			if(viradas[l][c] == 1){
@@ -50,8 +51,6 @@ function esconde(){
 				final++
 		}
 	}
-	if(final==2)
-		controlSound("finish");
 
 	cartas_viradas = 0;
 	jogadas++
@@ -120,8 +119,11 @@ function verifica(id){
 			cartas_viradas++;
 			viradas[linha][coluna] = 1;
 		}
-		if(cartas_viradas == 2)
+		if(cartas_viradas == 2) {
 			setTimeout(esconde, 1000);
+			if(final==2)
+				controlSound("finish");
+		}
 	}
 }
 
