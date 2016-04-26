@@ -1,0 +1,60 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-image: url(../imagens/background.jpg);
+	background-size: cover;
+}
+.panel{
+	width: 40%;
+	height: 40%;
+	top: 30%;
+	left: 30%;
+	position: absolute;
+	border-style: solid;
+	border-radius: 15px;
+	background-color: black;
+	opacity: 0.8;
+	padding: 0;
+}
+.panel_left{
+	width: 15%;
+	height: 79%;
+	top: 10%;
+	left: 3%;
+	position: absolute;
+	border-style: solid;
+	border-radius: 15px;
+	background-color: black;
+	opacity: 0.8;
+	padding: 0;
+}
+#span_cabecalho{
+	font-family: arial;
+	margin-top: 0;
+	font-size: 40px;
+	text-align: center;
+	color: white;
+}
+.seletor{
+	color: white;
+}
+#options{
+	left: 5%;
+	position: absolute;
+}
+table{
+	left: 31%;
+	top: 1%;
+	position: absolute;
+}
+td{
+	width: 200px;
+}
+tr{
+	height: 130px;
+}
+td img{
+	border-style: solid;
+	width: 120px;
+	height: 144px;
+}

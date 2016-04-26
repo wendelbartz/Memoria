@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jogo Da Memória</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<script type="text/javascript" src="js/menu.js"></script>
+</head>
+<body>
+	<audio src="sons/theme_song.mp3" id="musica" type="audio/mpeg"></audio>
+	<audio src="" id="sons"></audio>
+	<div class="panel" id="menu">
+		<p id="span_cabecalho">Jogo da Memória</p>
+		<div id="options">
+			<span class="seletor">Selecione a dificuldade: </span>
+			<select name="dificuldade">
+ 				<option value="fácil">Fácil</option>
+ 				<option value="médio">Médio</option>
+  				<option value="difícil">Difícil</option>
+			</select>
+			<br>
+			<br>
+			<span class="seletor">Tocar Música: </span>
+			<input type="checkbox" onchange="controlMusic()"></input>
+		</div>
+		<button style="bottom: 7%; right: 5%; position: absolute;" onclick="alteraMenu()">Iniciar o Jogo</button>
+	</div>
+
+	<div id="jogo">
+
+
+
+
+
+	</div>
+
+
+</body>
+</html>
