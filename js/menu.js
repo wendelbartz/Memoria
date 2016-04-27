@@ -10,6 +10,10 @@ var final;
 var toasty = true;
 var acertos_seguidos = 0;
 
+function mostraMenu(){
+	document.getElementById('menu').className = "panel";
+}
+
 function finaliza(){
 	var flag = true;
 	for (l = 0; l < viradas.length; l++) {
