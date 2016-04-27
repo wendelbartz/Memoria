@@ -7,7 +7,7 @@ var fotos = ["imagens/raiden.jpg","imagens/scorpion.jpg"
 						,"imagens/nightwolf.jpg","imagens/shao_kahn.jpg","imagens/verso_carta.jpg"];
 var jogadas = 0;
 var final;
-var toasty = false;
+var toasty = true;
 var acertos_seguidos = 0;
 
 function finaliza(){
@@ -150,10 +150,11 @@ function verifica(id){
 		}
 		if(cartas_viradas == 2) {
 			compara();
-			if(acertos_seguidos == 3){
+			if(acertos_seguidos == 3 && toasty){
 				document.getElementById('toasty').className = "toasty";
 				document.getElementById('toastySom').play();
-				setTimeout(function(){ document.getElementById('toasty').className = "hidden"; }, 932);
+				toasty = false;
+				setTimeout(function(){document.getElementById('toasty').className = "hidden";}, 932);
 			}
 			setTimeout(esconde, 1400);
 		}
