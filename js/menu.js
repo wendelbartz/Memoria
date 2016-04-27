@@ -7,6 +7,8 @@ var fotos = ["imagens/raiden.jpg","imagens/scorpion.jpg"
 						,"imagens/nightwolf.jpg","imagens/shao_kahn.jpg","imagens/verso_carta.jpg"];
 var jogadas = 0;
 var final;
+var toasty = false;
+var acertos_seguidos = 0;
 
 function finaliza(){
 	var flag = true;
@@ -48,6 +50,7 @@ function compara(){
 					if(cartas[l][c] == cartas[first_l][first_c]){
 						viradas[l][c] = 2;
 						viradas[first_l][first_c] = 2;
+						acertos_seguidos++;
 						controlSound(cartas[l][c]);
 						break;
 					}
@@ -72,6 +75,7 @@ function esconde(){
 						document.getElementById("l" + (first_l+1) + "c" + (first_c+1)).src = fotos[8];
 						viradas[l][c] = 0;
 						viradas[first_l][first_c] = 0;
+						acertos_seguidos = 0;
 					}
 				}
 			}
@@ -81,9 +85,9 @@ function esconde(){
 	cartas_viradas = 0;
 	jogadas++
 	if(document.getElementById('jogadas')==null)
-		document.getElementById('options').innerHTML += "<p id='jogadas' class='seletor'>Jogadas: "+jogadas+"</p>";
+		document.getElementById('options').innerHTML += "<p class='seletor'>Jogadas: <span class='seletor' id='jogadas'>"+jogadas+"</span></p>";
 	else{
-		document.getElementById('jogadas').innerHTML = "Jogadas: "+jogadas;
+		document.getElementById('jogadas').innerHTML =jogadas;
 		finaliza();
 	}
 }
@@ -146,6 +150,11 @@ function verifica(id){
 		}
 		if(cartas_viradas == 2) {
 			compara();
+			if(acertos_seguidos == 3){
+				document.getElementById('toasty').className = "toasty";
+				document.getElementById('toastySom').play();
+				setTimeout(function(){ document.getElementById('toasty').className = "hidden"; }, 932);
+			}
 			setTimeout(esconde, 1400);
 		}
 	}
@@ -158,7 +167,7 @@ function alteraMenu(){
 	cartas_viradas = 0;
 	jogadas = 0;
 	if(document.getElementById('jogadas')!=null)
-		document.getElementById('jogadas').innerHTML = "Jogadas: "+jogadas;
+		document.getElementById('jogadas').innerHTML = jogadas;
 }
 
 function controlMusic() {
