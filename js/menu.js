@@ -23,10 +23,21 @@ function finaliza(){
 	}
 }
 
-function esconde(){
+function finish_hin() {
+	final=0;
+	for (l = 0; l < viradas.length; l++) {
+		for (c = 0; c < 4; c++) {
+			if(viradas[l][c] == 0)
+				final++;
+		}
+	}
+	if(final==2)
+		controlSound("finish");
+}
+
+function compara(){
 	var first_l, first_c = null;
 	var l, c;
-	final = 0;
 	for (l = 0; l < viradas.length; l++) {
 		for (c = 0; c < 4; c++) {
 			if(viradas[l][c] == 1){
@@ -39,7 +50,24 @@ function esconde(){
 						viradas[first_l][first_c] = 2;
 						controlSound(cartas[l][c]);
 						break;
-					} else {
+					}
+				}
+			}
+		}
+	}
+}
+
+function esconde(){
+	var first_l, first_c = null;
+	var l, c;
+	for (l = 0; l < viradas.length; l++) {
+		for (c = 0; c < 4; c++) {
+			if(viradas[l][c] == 1){
+				if(first_l == null) {
+					first_l = l;
+					first_c = c;
+				}	else {
+					if(cartas[l][c] != cartas[first_l][first_c]) {
 						document.getElementById("l" + (l+1) + "c" + (c+1)).src = fotos[8];
 						document.getElementById("l" + (first_l+1) + "c" + (first_c+1)).src = fotos[8];
 						viradas[l][c] = 0;
@@ -47,11 +75,9 @@ function esconde(){
 					}
 				}
 			}
-			if(viradas[l][c] == 0)
-				final++
 		}
 	}
-
+	finish_hin();
 	cartas_viradas = 0;
 	jogadas++
 	if(document.getElementById('jogadas')==null)
@@ -107,7 +133,6 @@ function randomiza(){
 		cartas[linha][coluna] = fotos[i];
 	}
 }
-var int;
 function verifica(id){
 	var temp = id.toString();
 	var linha = parseInt(temp.charAt(1)) - 1;
@@ -120,9 +145,8 @@ function verifica(id){
 			viradas[linha][coluna] = 1;
 		}
 		if(cartas_viradas == 2) {
-			setTimeout(esconde, 1000);
-			if(final==2)
-				controlSound("finish");
+			compara();
+			setTimeout(esconde, 1400);
 		}
 	}
 }

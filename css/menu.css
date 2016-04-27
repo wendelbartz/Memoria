@@ -58,3 +58,7 @@ td img{
 	width: 120px;
 	height: 144px;
 }
+
+img.hidden{
+	display: none;
+}
