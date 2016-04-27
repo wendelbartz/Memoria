@@ -89,7 +89,7 @@ function esconde(){
 	cartas_viradas = 0;
 	jogadas++
 	if(document.getElementById('jogadas')==null)
-		document.getElementById('options').innerHTML += "<p class='seletor'>Jogadas: <span class='seletor' id='jogadas'>"+jogadas+"</span></p>";
+		document.getElementById('rodadas').innerHTML += "Jogadas: <span class='seletor' id='jogadas'>"+jogadas+"</span>";
 	else{
 		document.getElementById('jogadas').innerHTML =jogadas;
 		finaliza();
