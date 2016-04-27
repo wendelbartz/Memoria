@@ -3,7 +3,7 @@ body{
 	padding: 0;
 	background-image: url(../imagens/background.jpg);
 	background-size: cover;
-	background-repeat: round;
+	background-repeat: no-repeat;
 }
 .panel{
 	width: 40%;
