@@ -171,7 +171,7 @@ function alteraMenu(){
 	randomiza();
 	cartas_viradas = 0;
 	jogadas = 0;
-	var toasty = true;
+	toasty = true;
 	if(document.getElementById('jogadas')!=null)
 		document.getElementById('jogadas').innerHTML = jogadas;
 }
