@@ -171,6 +171,7 @@ function alteraMenu(){
 	cartas_viradas = 0;
 	jogadas = 0;
 	toasty = true;
+	acertos_seguidos = 0;
 	if(document.getElementById('jogadas')!=null)
 		document.getElementById('jogadas').innerHTML = jogadas;
 }
